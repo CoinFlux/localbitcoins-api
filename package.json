@@ -1,0 +1,31 @@
+{
+  "name": "localbitcoins-node",
+  "version": "0.0.1",
+  "description": "LocalBitcoins API wrapper for NodeJS",
+  "keywords": [
+    "localbitcoins",
+    "api",
+    "btc",
+    "bitcoin"
+  ],
+  "author": "Vlad Nistor (https://github.com/vnistor)",
+  "contributors": ["Anthony Mayfield (https://github.com/mrmayfield)", "Robert Myers (https://github.com/nothingisdead)"],
+  "license": "MIT",
+  "dependencies": {
+    "querystring": ">=0.2.0",
+    "request": ">=2.27.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CoinFlux/localbitcoins-api"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10"
+  },
+  "bugs": {
+    "url": "https://github.com/CoinFlux/localbitcoins-api/issues",
+    "email": "contact@coinflux.eu"
+  },
+  "readmeFilename": "README.md"
+}
