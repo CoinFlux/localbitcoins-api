@@ -39,5 +39,5 @@ Credit:
 Initially inspired by:
 https://github.com/nothingisdead/npm-kraken-api.
 With contributions from:
-https://github.com/mrmayfield/localbitcoins-node
-https://github.com/vnistor/localbitcoins-node
+https://github.com/mrmayfield/localbitcoins-node.
+https://github.com/vnistor/localbitcoins-node.
