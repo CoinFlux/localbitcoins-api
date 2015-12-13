@@ -1,10 +1,10 @@
 var request = require('request')
 var crypto		= require('crypto');
 var querystring	= require('querystring');
-var nonce = (new Date).getTime();
 
 
 function LBCClient(key, secret, otp) {
+	var nonce = new Date() * 1000;
 	var self = this;
 
 	var config = {

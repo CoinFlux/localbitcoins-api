@@ -1,6 +1,6 @@
 {
   "name": "localbitcoins-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "LocalBitcoins API wrapper for NodeJS",
   "keywords": [
     "localbitcoins",
@@ -19,7 +19,7 @@
     "type": "git",
     "url": "https://github.com/CoinFlux/localbitcoins-api"
   },
-  "main": "index.js",
+  "main": "localbitcoins.js",
   "engines": {
     "node": ">=0.10"
   },
