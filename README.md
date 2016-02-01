@@ -34,6 +34,9 @@ lbc.api('myself', ad_id, params, function(error, data) {
 To-Do:
 - Get all methods working
 
+CHANGELOG:
+0.0.3 - Add /contact_info/ and /contact_info/{contact_id} routes
+
 Credit:
 
 Initially inspired by:

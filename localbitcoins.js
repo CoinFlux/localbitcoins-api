@@ -30,7 +30,7 @@ function LBCClient(key, secret, otp) {
 			'dashboard', 'dashboard/released', 'dashboard/canceled', 'dashboard/closed',
 			'dashboard/released/buyer', 'dashboard/canceled/buyer', 'dashboard/closed/buyer',
 			'dashboard/released/seller', 'dashboard/canceled/seller', 'dashboard/closed/seller',
-			'wallet-send', 'wallet'
+			'wallet-send', 'wallet', 'contact_info'
 			]
 		};
 		if(methods.public.indexOf(method) !== -1) {
@@ -126,7 +126,7 @@ function LBCClient(key, secret, otp) {
     var gets = ['ad-get', 'dashboard', 'dashboard/released', 'dashboard/canceled',
     'dashboard/closed', 'dashboard/released/buyer', 'dashboard/canceled/buyer',
     'dashboard/closed/buyer', 'dashboard/released/seller', 'dashboard/canceled/seller',
-    'dashboard/closed/seller', 'wallet'];
+    'dashboard/closed/seller', 'wallet', 'contact_info'];
     var posts = [ 'ad-get/ad_id', 'myself', 'ads',
     'wallet-send', 'wallet-balance', 'wallet-addr'];
 

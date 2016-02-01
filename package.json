@@ -1,6 +1,6 @@
 {
   "name": "localbitcoins-api",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "LocalBitcoins API wrapper for NodeJS",
   "keywords": [
     "localbitcoins",
