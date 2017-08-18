@@ -8,7 +8,7 @@ function LBCClient(key, secret, otp) {
 	var self = this;
 
 	var config = {
-		url: 'https://localbitcoins.com/api',
+		url: 'https://localbitcoins.com/',
 		key: key,
 		secret: secret,
 		otp: otp,
@@ -24,7 +24,7 @@ function LBCClient(key, secret, otp) {
 	 */
 	function api(method, ad_id, params, callback) {
 		var methods = {
-			onlineAds: ['buy-bitcoins-online'],
+			onlineAds: ['buy-bitcoins-online','sell-bitcoins-online'],
 			public: ['countrycodes'],
 			private: ['ad-get', 'ad-get/ad_id', 'myself', 'ads',
 			'dashboard', 'dashboard/released', 'dashboard/canceled', 'dashboard/closed',
@@ -39,7 +39,9 @@ function LBCClient(key, secret, otp) {
 		else if(methods.private.indexOf(method) !== -1) {
 			return privateMethod(method, params, ad_id, callback);
 		}
-		else {
+		else if(methods.onlineAds.indexOf(method) !== -1) {
+			return onlineAdsMethod(method, params, ad_id, callback);
+		}else {
 			throw new Error(method + ' is not a valid API method.');
 		}
 	}
@@ -61,9 +63,9 @@ function LBCClient(key, secret, otp) {
 			path	= '/' + method;
 		}
 
-		var url		= config.url + path;
+		var url		= config.url + 'api/'+ path;
 
-		return rawRequest(url, {}, params, callback);
+		return rawRequest(url, {}, params, method, callback);
 	}
 
 	/**
@@ -84,7 +86,7 @@ function LBCClient(key, secret, otp) {
 			path	= '/' + method;
 		}
 
-		var url		= config.url + path;
+		var url		= config.url + 'api/' + path;
 
 		var signature = getMessageSignature(path, params, nonce);
 
@@ -97,6 +99,24 @@ function LBCClient(key, secret, otp) {
 
 		return rawRequest(url, headers, params, method, callback);
 	}
+
+	function onlineAdsMethod(method, params, ad_id, callback) {
+		params = params || {};
+
+		var path;
+		if (ad_id) {
+			path	= '/' + method + '/' + ad_id;
+		} else {
+			path	= '/' + method;
+		}
+		
+		path+='.json'
+
+		var url		= config.url + path;
+
+		return rawRequest(url, {}, params, method, callback);
+	}
+
 
 	/**
 	 * This method returns a signature for a request as a Base64-encoded string
@@ -126,7 +146,9 @@ function LBCClient(key, secret, otp) {
     var gets = ['ad-get', 'dashboard', 'dashboard/released', 'dashboard/canceled',
     'dashboard/closed', 'dashboard/released/buyer', 'dashboard/canceled/buyer',
     'dashboard/closed/buyer', 'dashboard/released/seller', 'dashboard/canceled/seller',
-    'dashboard/closed/seller', 'wallet', 'contact_info'];
+	'dashboard/closed/seller', 'wallet', 'contact_info','countrycode', 'buy-bitcoins-online', 
+	'sell-bitcoins-online'];
+	
     var posts = [ 'ad-get/ad_id', 'myself', 'ads',
     'wallet-send', 'wallet-balance', 'wallet-addr'];
 
@@ -169,7 +191,7 @@ function LBCClient(key, secret, otp) {
 	 } else {
 
 		var options = {
-			url: url + '/',
+			url: url ,
 			headers: headers,
 		};
 
