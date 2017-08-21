@@ -25,7 +25,7 @@ function LBCClient(key, secret, otp) {
 	function api(method, ad_id, params, callback) {
 		var methods = {
 			onlineAds: ['buy-bitcoins-online','sell-bitcoins-online'],
-			public: ['countrycodes'],
+			public: ['countrycodes','account_info'],
 			private: ['ad-get', 'ad-get/ad_id', 'myself', 'ads',
 			'dashboard', 'dashboard/released', 'dashboard/canceled', 'dashboard/closed',
 			'dashboard/released/buyer', 'dashboard/canceled/buyer', 'dashboard/closed/buyer',
@@ -63,7 +63,7 @@ function LBCClient(key, secret, otp) {
 			path	= '/' + method;
 		}
 
-		var url		= config.url + 'api/'+ path;
+		var url		= config.url + 'api'+ path;
 
 		return rawRequest(url, {}, params, method, callback);
 	}
@@ -147,7 +147,7 @@ function LBCClient(key, secret, otp) {
     'dashboard/closed', 'dashboard/released/buyer', 'dashboard/canceled/buyer',
     'dashboard/closed/buyer', 'dashboard/released/seller', 'dashboard/canceled/seller',
 	'dashboard/closed/seller', 'wallet', 'contact_info','countrycode', 'buy-bitcoins-online', 
-	'sell-bitcoins-online'];
+	'sell-bitcoins-online','account_info'];
 	
     var posts = [ 'ad-get/ad_id', 'myself', 'ads',
     'wallet-send', 'wallet-balance', 'wallet-addr'];
