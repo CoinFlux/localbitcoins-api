@@ -14,7 +14,7 @@ function LBCClient(key, secret, otp) {
 		otp: otp,
 		timeoutMS: 5000
 	};
-
+ 
 	/**
 	 * This method makes a public or private API request.
 	 * @param  {String}   method   The API method (public or private)
