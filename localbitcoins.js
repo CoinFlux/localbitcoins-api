@@ -3,15 +3,14 @@ var crypto		= require('crypto');
 var querystring	= require('querystring');
 
 
-function LBCClient(key, secret, otp) {
+function LBCClient(key, secret, opt = {}) {
 	var nonce = new Date() * 1000;
 	var self = this;
 
 	var config = {
-		url: 'https://localbitcoins.com/api',
+		url: opt.apiUrl || 'https://localbitcoins.com/api',
 		key: key,
 		secret: secret,
-		otp: otp,
 		timeoutMS: 5000
 	};
 

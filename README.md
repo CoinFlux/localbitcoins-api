@@ -37,6 +37,13 @@ To-Do:
 CHANGELOG:
 0.0.3 - Add /contact_info/ and /contact_info/{contact_id} routes
 
+0.0.4 - Add ability to set api endpoint (it needs for user in russia because localbitcoins.com is blocked). Usage:
+```
+var lbc = new LBCClient(api_key, api_secret, {
+    apiUrl: 'https://localbitcoins.net/api'
+});
+```
+
 Credit:
 
 Initially inspired by:
