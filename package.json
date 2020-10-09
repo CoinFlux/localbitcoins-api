@@ -9,9 +9,13 @@
     "bitcoin"
   ],
   "author": "Vlad Nistor (https://github.com/vnistor)",
-  "contributors": ["Anthony Mayfield (https://github.com/mrmayfield)", "Robert Myers (https://github.com/nothingisdead)"],
+  "contributors": [
+    "Anthony Mayfield (https://github.com/mrmayfield)",
+    "Robert Myers (https://github.com/nothingisdead)"
+  ],
   "license": "MIT",
   "dependencies": {
+    "bitcoin-exchange-rates": "0.0.12",
     "querystring": ">=0.2.0",
     "request": ">=2.27.0"
   },
